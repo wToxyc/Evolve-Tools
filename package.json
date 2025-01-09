@@ -1,6 +1,6 @@
 {
   "name": "evolve-tools",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Evolve Tools",
   "keywords": [
     "discord",
@@ -18,7 +18,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node .",
-    "deploy": "node src/deploy.js"
+    "deploy": "node src/utils/deploy.js"
   },
   "dependencies": {
     "colors": "^1.4.0",

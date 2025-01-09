@@ -20,7 +20,7 @@ for (const file of handlerFiles) {
     try {
         handler(client);
     } catch (err) {
-        console.log(`[FATAL] Failed to run handler at ${handlerPath}!`.red);
+        console.log(`[FATAL] Failed to run handler at ${handlerPath}!`.red, err);
     }
     
 }
