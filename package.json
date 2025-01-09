@@ -1,6 +1,6 @@
 {
   "name": "evolve-tools",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Evolve Tools",
   "keywords": [
     "discord",
@@ -23,6 +23,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "discord.js": "^14.17.3",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "mongoose": "^8.9.3"
   }
 }

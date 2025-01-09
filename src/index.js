@@ -1,6 +1,7 @@
 const { Client, GatewayIntentBits } = require('discord.js');
 const { readdirSync } = require('fs');
 const { join } = require('path');
+const connectDb = require('./services/db.js');
 require('dotenv').config();
 const TOKEN = process.env.TOKEN;
 require('colors');
@@ -24,5 +25,7 @@ for (const file of handlerFiles) {
     }
     
 }
+
+connectDb();
 
 client.login(TOKEN);

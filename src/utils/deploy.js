@@ -47,4 +47,4 @@ const rest = new REST().setToken(TOKEN);
     } catch (err) {
         console.log('Couldn\'t reload application (/) commands!'.red, err);
     }
-});
+})();
