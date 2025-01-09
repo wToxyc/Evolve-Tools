@@ -1,0 +1,28 @@
+{
+  "name": "evolve-tools",
+  "version": "0.1.0",
+  "description": "Evolve Tools",
+  "keywords": [
+    "discord",
+    "bot",
+    "discord-bot",
+    "bot",
+    "bot-discord",
+    "evolve",
+    "valorant",
+    "evolve-valorant"
+  ],
+  "license": "MIT",
+  "author": "zed",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node .",
+    "deploy": "node src/deploy.js"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^14.17.3",
+    "dotenv": "^16.4.7"
+  }
+}
