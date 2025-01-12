@@ -17,18 +17,24 @@ const userSchema = new Schema({
             default: 0
         }
     },
-    warns: [{
+    sanctions: [{
         mod: {
             type: String,
             required: true
         },
         reason: {
             type: String,
-            required: true
+            required: false,
+            default: 'Aucune raison spécifiée'
         },
         date: {
             type: Date,
             required: true
+        },
+        type: {
+            type: String,
+            required: true,
+            enum: ['ban', 'kick', 'timeout', 'mute', 'warn']
         }
     }]
 });
