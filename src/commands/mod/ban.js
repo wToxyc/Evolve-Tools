@@ -48,7 +48,7 @@ module.exports = {
 
             await userData.save();
 
-            member.send(`Vous avez banni de **${interaction.guild.name}** pour **${reason}**.`);
+            member.send(`Vous avez banni de **${interaction.guild.name}** pour **${reason}**.`).catch(() => {});
         } catch (err) {
             interaction.reply({
                 content: 'Impossible de bannir cet utilisateur. Vérifiez mes permissions ou contacter un administrateur.',
