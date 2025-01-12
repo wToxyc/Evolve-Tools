@@ -26,7 +26,7 @@ module.exports = {
         if (member.id === interaction.user.id || member.id === '1318266861003210822' || member.roles.highest.comparePositionTo(interaction.member.roles.highest) >= 0) {
             return interaction.reply({
                 content: 'Vous ne pouvez pas bannir cet utilisateur !',
-                MessageFlags: MessageFlags.Ephemeral
+                flags: MessageFlags.Ephemeral
             });
         }
 
@@ -52,7 +52,7 @@ module.exports = {
         } catch (err) {
             interaction.reply({
                 content: 'Impossible de bannir cet utilisateur. Vérifiez mes permissions ou contacter un administrateur.',
-                MessageFlags: MessageFlags.Ephemeral
+                flags: MessageFlags.Ephemeral
             });
         }
     }
