@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, PermissionFlagsBits } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits, MessageFlags } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -13,6 +13,13 @@ module.exports = {
     async run(interaction) {
         const channel = interaction.options.getChannel('channel') || interaction.channel;
 
+        if (!channel.permissionsFor(interaction.guild.id).has(PermissionFlagsBits.SendMessages)) {
+            return interaction.reply({
+                content: 'Ce salon est déjà vérouillé !',
+                flags: MessageFlags.Ephemeral
+            });
+        }
+
         try {
             await channel.permissionOverwrites.edit(interaction.guild.id, {
                 SendMessages: false
@@ -20,7 +27,7 @@ module.exports = {
             interaction.reply('Salon vérouillé.');
         } catch (err) {
             interaction.reply({
-                ephemeral: true,
+                flags: MessageFlags.Ephemeral,
                 content: 'Impossible de vérouiller ce salon. Vérifiez mes permissions ou contacter un administrateur.'
             });
         }
