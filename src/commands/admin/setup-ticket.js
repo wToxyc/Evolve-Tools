@@ -2,7 +2,7 @@ const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder, ActionRowBuilder
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('ticket-setup')
+        .setName('setup-ticket')
         .setDescription('Met en place le système de ticket')
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
         .addChannelOption(option =>
