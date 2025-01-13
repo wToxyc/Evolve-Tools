@@ -1,6 +1,6 @@
-require('dotenv').config();
 const { ActivityType } = require('discord.js');
 const User = require('../models/User.js');
+require('dotenv').config();
 
 module.exports = {
     name: 'ready',
@@ -9,7 +9,7 @@ module.exports = {
         console.log('Développé par zed\nRoad to VCT 🔥');
 
         const guild = client.guilds.cache.get(process.env.GUILD_ID);
-        const channel = guild.channels.cache.get('1327956364055543828');
+        const memberCountChannel = guild.channels.cache.get(process.env.MEMBER_COUNT_CHANNEL);
 
         const statuses = [
             'Road to VCT 🏆',
@@ -23,7 +23,7 @@ module.exports = {
             client.user.setActivity(statuses[i], { type: ActivityType.Watching });
             i = ++i % statuses.length;
 
-            channel.setName(`🔥・Membres : ${guild.memberCount}`);
+            memberCountChannel.setName(`🔥・Membres : ${guild.memberCount}`);
 
             guild.members.cache.filter((member) => member.voice.channel).forEach(async (member) => {
                 let user = await User.findOne({ id: member.id });
