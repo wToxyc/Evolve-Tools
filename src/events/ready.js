@@ -23,7 +23,7 @@ module.exports = {
             client.user.setActivity(statuses[i], { type: ActivityType.Watching });
             i = ++i % statuses.length;
 
-            memberCountChannel.setName(`🔥・Membres : ${guild.memberCount}`);
+            if (memberCountChannel) memberCountChannel.setName(`🔥・Membres : ${guild.memberCount}`).catch(() => {});
 
             guild.members.cache.filter((member) => member.voice.channel).forEach(async (member) => {
                 let user = await User.findOne({ id: member.id });
